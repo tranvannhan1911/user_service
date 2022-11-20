@@ -4,9 +4,12 @@ WORKDIR /app
 
 ENV TZ=Asia/Ho_Chi_Minh
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt clean 
 RUN apt update -y
 
-RUN apt install gcc g++ python3-dev -y
+RUN apt install g++ -y
+RUN apt install gcc -y
+RUN apt install python3-dev -y
 RUN apt install python3-pip -y
 
 RUN apt update -y
